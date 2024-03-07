@@ -26,16 +26,13 @@ nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
 
-
-from sklearn.base import BaseEstimator, TransformerMixin
-
 from scipy.sparse import csr_matrix
 from scipy.sparse import hstack
 
 categories = ["business", "entertainment", "politics", "sport", "tech"]
-from google.colab import drive
-drive.mount('/content/drive/')
-path = '/content/drive/My Drive/dataset_coursework1/bbc/'
+
+current_directory = os.getcwd()
+path = current_directory + "/bbc/"
 
 def load_data(folder_path):
     documents = []
